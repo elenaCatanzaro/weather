@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="personal page">
+	<title>Login</title>
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<link rel="icon" type="image/x-icon" href="/img/icon_weather.ico">
+	<script type="application/ld+json">
+		{
+			"@content": "https://schema.org",
+			"@type": "WebPage",
+			"name": "Forecast WebPage Project",
+			"url": "https://weather.com",
+			"description": "WebPage for forecast",
+			"dateCreated": "2022-04-22",
+			"inLanguage": "EN",
+			"keywords": "weather, forecast, today, tomorrow, next week, temperature",
+			"author":{
+				"@type":"Person",
+				"email": "elena.catanzaro@studenti.unimi.it",
+				"jobTitle": "Student",
+				"name": "Elena Catanzaro"
+			}
+		}
+	</script>
+</head>
+<body class="light-theme" onload="responsive_menu()">
+	<header>
+		<nav class="navbar-theme fixed-top">
+		  
+			<a href="/w" class="nav-branding">Weather</a>
+			<ul class="nav-menu">
+				<li class="nav-item">
+					<a href="/dashboard" class="navigation-link">Home</a>
+				</li>
+				<li>
+					<button class="btn toggle-icon" onclick="darkmode()" aria-label="menu button">
+					<svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-mask" viewBox="0 0 16 16">
+			  			<path d="M6.225 1.227A7.5 7.5 0 0 1 10.5 8a7.5 7.5 0 0 1-4.275 6.773 7 7 0 1 0 0-13.546zM4.187.966a8 8 0 1 1 7.627 14.069A8 8 0 0 1 4.186.964z"/>
+					</svg>
+					</button>
+				</li>
+				<li id="logout-button">
+					<form action="/logout?_method=DELETE" method="post">
+						<button class="btn btn-primary second-button-theme" type="submit">Sign out</button>
+					</form>
+				</li>
+			</ul>
+			<div class="hamburger">
+				<span class="bar"></span>
+				<span class="bar"></span>
+				<span class="bar"></span>
+			</div>
+		</nav>
+	</header>
+	<main class="main-theme" id="reg-marg">
+		
+			<section id="add-city">
+				<div class="dash-container">
+				<h1>Dashboard</h1>
+				<form autocomplete="off">
+					<div class="input-group mb-3 me-5">
+						<input type="text" class="form-control" placeholder="Add a city" aria-label="City names" onkeyup="loadResults(this.value)" onfocusin="showResults()" id="search-field">
+						<button class="btn second-button-theme" type="button" id="button-addon2" onclick="add_city()">Add</button>	
+					</div>
+					<div id="result" class="add-result" onfocusout="hideResults()"></div>
+				</form>
+				</div>
+			</section>
+			<section id="showcase">
+				<div class="container dash-container">
+				  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="city-showcase">
+				      
+				  </div>
+				</div>
+			</section>
+		</div>
+		
+		
+		
+	</main>
+	<footer class="d-flex flex-wrap justify-content-between align-items-center px-5 py-5 footer-theme">
+	    	<p class="col-md-4 mb-0 text-muted">Weather&copy; 2022 Company, Inc</p>
+	    	<ul class="nav col-md-4 justify-content-end">
+		      <li class="nav-item"><a href="/w" class="nav-link px-2 text-muted">Home</a></li>
+		      <li class="nav-item"><a href="/w/login" class="nav-link px-2 text-muted">Login</a></li>
+		      <li class="nav-item"><a href="/w/register" class="nav-link px-2 text-muted">Sign up</a></li>
+	    	</ul>
+  	</footer>
+	
+  	<script async src="../../js/bootstrap.bundle.min.js"></script>
+	<script src="../../js/js/utils.js"></script>
+	<script type="text/javascript" src="../../js/js/dashboard.js"></script>
+</body>
+</html>	

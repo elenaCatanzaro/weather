@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Day per day we provide weather forecast">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+	<title>Meteo</title>
+	<link rel="icon" type="image/x-icon" href="/img/icon_weather.ico">
+	<script type="application/ld+json">
+		{
+			"@content": "https://schema.org",
+			"@type": "WebPage",
+			"name": "Forecast WebPage Project",
+			"url": "https://weather.com",
+			"description": "WebPage for forecast",
+			"dateCreated": "2022-04-22",
+			"inLanguage": "EN",
+			"keywords": "weather, forecast, today, tomorrow, next week, temperature",
+			"author":{
+				"@type":"Person",
+				"email": "elena.catanzaro@studenti.unimi.it",
+				"jobTitle": "Student",
+				"name": "Elena Catanzaro"
+			}
+		}
+	</script>
+</head>
+<body class="light-theme">
+	<header>
+		<nav class="navbar-theme fixed-top">
+		  
+			<a href="/w" class="nav-branding">Weather</a>
+			<ul class="nav-menu">
+				<li class="nav-item">
+					<a href="/w" class="navigation-link">Home</a>
+				</li>
+				<li class="nav-item">
+					<a href="/w/login" class="navigation-link">Login</a>
+				</li>
+				<li class="nav-item">
+					<a href="/w/register" class="navigation-link">Sign up</a>
+				</li>
+				<li>
+					<button class="btn toggle-icon" onclick="darkmode()" aria-label="menu button">
+					<svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-mask" viewBox="0 0 16 16">
+			  			<path d="M6.225 1.227A7.5 7.5 0 0 1 10.5 8a7.5 7.5 0 0 1-4.275 6.773 7 7 0 1 0 0-13.546zM4.187.966a8 8 0 1 1 7.627 14.069A8 8 0 0 1 4.186.964z"/>
+					</svg>
+					</button>
+				</li>
+			</ul>
+			<div class="hamburger">
+				<span class="bar"></span>
+				<span class="bar"></span>
+				<span class="bar"></span>
+			</div>
+		</nav>
+	</header>
+	<main class="main-theme">
+		<section>
+			<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+			  <div class="carousel-indicators">
+			    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+			    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+			    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+			  </div>
+			  <div class="carousel-inner">
+			    <div class="carousel-item active">
+			      <img src="/img/com/prague.webp" class="d-block w-100 carousel-img" alt="Prague city">
+			      <div class="carousel-caption d-none d-md-block">
+			        <h5>Prague</h5>
+			        <p>Some representative placeholder content for the first slide.</p>
+			      </div>
+			    </div>
+			    <div class="carousel-item">
+			      <img src="/img/com/rome.webp" class="d-block w-100 carousel-img" alt="Rome city">
+			      <div class="carousel-caption d-none d-md-block">
+			        <h5>Rome</h5>
+			        <p>Some representative placeholder content for the second slide.</p>
+			      </div>
+			    </div>
+			    <div class="carousel-item">
+			      <img src="/img/com/edinburg.webp" class="d-block w-100 carousel-img" alt="Edinburg City">
+			      <div class="carousel-caption d-none d-md-block">
+			        <h5>Edinburg</h5>
+			        <p>Some representative placeholder content for the third slide.</p>
+			      </div>
+			    </div>
+			  </div>
+			  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+			    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			    <span class="visually-hidden">Previous</span>
+			  </button>
+			  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+			    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+			    <span class="visually-hidden">Next</span>
+			  </button>
+			</div>
+		</section>
+		<section id="display-sections">
+			<h2>Most popular</h2>
+			<div id="list-background">
+				<ol class="list-group list-group-numbered">
+				  <li class="list-group-item d-flex justify-content-between align-items-start">
+				    <div class="ms-2 me-auto">
+				      <div class="fw-bold"><a href="/w/city/bangkok">Bangkok</a></div>
+				      Thailand
+				    </div>
+				    <span class="badge bg-primary rounded-pill bkg-te">
+				    	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up" viewBox="0 0 16 16">
+						 <path d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z"/>
+						</svg>
+					</span>
+				  </li>
+				  <li class="list-group-item d-flex justify-content-between align-items-start">
+				    <div class="ms-2 me-auto">
+				      <div class="fw-bold"><a href="/w/city/paris">Paris</a></div>
+				      France
+				    </div>
+				    <span class="badge bg-primary rounded-pill bkg-te">
+				    	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up" viewBox="0 0 16 16">
+						 <path d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z"/>
+						</svg>
+				    </span>
+				  </li>
+				  <li class="list-group-item d-flex justify-content-between align-items-start">
+				    <div class="ms-2 me-auto">
+				      <div class="fw-bold"><a href="/w/city/london">London</a></div>
+				      UK
+				    </div>
+				    <span class="badge bg-primary rounded-pill bkg-te">
+				    	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+  						<path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/>
+						</svg>
+				    </span>
+				  </li>
+				  <li class="list-group-item d-flex justify-content-between align-items-start">
+				    <div class="ms-2 me-auto">
+				      <div class="fw-bold"><a href="/w/city/dubai">Dubai</a></div>
+				      United Arab Emirates
+				    </div>
+				    <span class="badge bg-primary rounded-pill bkg-te">
+				    	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up" viewBox="0 0 16 16">
+						 <path d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z"/>
+						</svg>
+				    </span>
+				  </li>
+				  <li class="list-group-item d-flex justify-content-between align-items-start">
+				    <div class="ms-2 me-auto">
+				      <div class="fw-bold"><a href="/w/city/singapore" >Singapore</a></div>
+				      Republic of Singapore
+				    </div>
+				    <span class="badge bg-primary rounded-pill bkg-te">
+				    	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up" viewBox="0 0 16 16">
+						 <path d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z"/>
+						</svg>
+				    </span>
+				  </li>
+				</ol>
+			</div>
+			
+
+		</section>
+		<section id="long-background">
+			<div class="cont">
+				<h2>Italian spots</h2>	
+				<ol class="list-group list-group-numbered">
+				  <li class="list-group-item d-flex justify-content-between align-items-start">
+				    <div class="ms-2 me-auto">
+				      <div class="fw-bold"><a href="/w/city/capri">Capri</a></div>
+				      Italy - Campania
+				    </div>
+				    <span class="badge bg-primary rounded-pill bkg-te">
+				    	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up" viewBox="0 0 16 16">
+						 <path d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z"/>
+						</svg>
+					</span>
+				  </li>
+				  <li class="list-group-item d-flex justify-content-between align-items-start">
+				    <div class="ms-2 me-auto">
+				      <div class="fw-bold"><a href="/w/city/venice">Venezia</a></div>
+				      Italy - Veneto
+				    </div>
+				    <span class="badge bg-primary rounded-pill bkg-te">
+				    	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up" viewBox="0 0 16 16">
+						 <path d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z"/>
+						</svg>
+				    </span>
+				  </li>
+				  <li class="list-group-item d-flex justify-content-between align-items-start">
+				    <div class="ms-2 me-auto">
+				      <div class="fw-bold"><a href="/w/city/san_gimignano">San Gimignano</a></div>
+				      Italy - Toscana
+				    </div>
+				    <span class="badge bg-primary rounded-pill bkg-te">
+				    	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up" viewBox="0 0 16 16">
+						 <path d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z"/>
+						</svg>
+				    </span>
+				  </li>
+				  <li class="list-group-item d-flex justify-content-between align-items-start">
+				    <div class="ms-2 me-auto">
+				      <div class="fw-bold"><a href="/w/city/bologna">Bologna</a></div>
+				      Italy - Emiglia Romagna
+				    </div>
+				    <span class="badge bg-primary rounded-pill bkg-te">
+				    	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+  						<path d="M3.204 5h9.592L8 10.481 3.204 5zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659z"/>
+						</svg>
+				    </span>
+				  </li>
+				  <li class="list-group-item d-flex justify-content-between align-items-start">
+				    <div class="ms-2 me-auto">
+				      <div class="fw-bold"><a href="/w/city/camogli" >Camogli</a></div>
+				      Italy - Liguria
+				    </div>
+				    <span class="badge bg-primary rounded-pill bkg-te">
+				    	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up" viewBox="0 0 16 16">
+						 <path d="M3.204 11h9.592L8 5.519 3.204 11zm-.753-.659 4.796-5.48a1 1 0 0 1 1.506 0l4.796 5.48c.566.647.106 1.659-.753 1.659H3.204a1 1 0 0 1-.753-1.659z"/>
+						</svg>
+				    </span>
+				  </li>
+				</ol>
+			</div>
+		</section>
+	
+	</main>
+	<footer class="d-flex flex-wrap justify-content-between align-items-center px-5 py-5 footer-theme">
+	    	<p class="col-md-4 mb-0 text-muted">Weather&copy; 2022 Company, Inc</p>
+	    	<ul class="nav col-md-4 justify-content-end">
+		      <li class="nav-item"><a href="/w" class="nav-link px-2 text-muted">Home</a></li>
+		      <li class="nav-item"><a href="/w/login" class="nav-link px-2 text-muted">Login</a></li>
+		      <li class="nav-item"><a href="/w/register" class="nav-link px-2 text-muted">Sign up</a></li>
+	    	</ul>
+  	</footer>
+  	<script async src="../../js/bootstrap.bundle.min.js"></script>
+	<script src="../../js/js/utils.js"></script>
+	<script type="text/javascript" src="../../js/js/cities.js"></script>
+</body>
+</html>
