@@ -14,7 +14,7 @@ const methodOverride = require('method-override');
 const LocalStrategy = require('passport-local');
 const SimpleLinearRegression = require('ml-regression-simple-linear');
 
-const API_KEY =  'c1d885f040827dfcd0b43de870946873';
+const API_KEY =  '';
 const port = process.env.PORT || 8080;
 const dbUrl = 'mongodb://localhost:27017';
 const client = new MongoClient(dbUrl);

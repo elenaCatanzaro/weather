@@ -1,6 +1,6 @@
 const THEME_LS = 'theme';
-const API_KEY =  'c1d885f040827dfcd0b43de870946873';
-const UNSPLAH_API_KEY = 'z0zEn7-E3B3ApabSR6eAVaaAnMRu23OuyVbeT9obf-I';
+const API_KEY =  '';
+const UNSPLAH_API_KEY = '';
 const DEFAULT_HOME = 'img/home_default.jpg';
 
 // resetto il tema salvato al caricamento della pagina
